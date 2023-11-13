@@ -7,6 +7,7 @@ exports.home =  (req, res) => {
 exports.createUser = async (req, res) => {
     // extract info
     try {
+        
         const {name, username, email, phone} = req.body
 
         // if(!name || !email) {
