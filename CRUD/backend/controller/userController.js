@@ -4,7 +4,7 @@ exports.home =  (req, res) => {
     res.send('Hello world')
 }
 
-exports.addUser = async (req, res) => {
+exports.createUser = async (req, res) => {
     // extract info
     try {
         const {name, username, email, phone} = req.body
