@@ -18,7 +18,14 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log(`User connected : ${socket.id}`);
 
-    socket.on('disconnected', console.log(`User disconnected`))
+    socket.on("send-message", (message) => {
+        console.log(message);
+        //Broadcast to received message to all the connect user
+
+        io.emit("received-message", message)
+    })
+
+    socket.on('disconnected',() => console.log(`User disconnected`))
 })
 
 server.listen(PORT, () => {
