@@ -10,15 +10,15 @@ exports.createUser = async (req, res) => {
         
         const {name, username, email, phone} = req.body
 
-        // if(!name || !email) {
-        //     throw new Error("Name and email are required")
-        // }
+        if(!name || !email) {
+            throw new Error("Name and email are required")
+        }
 
-        // const userExist = User.findOne({email:email})
+        const userExist = User.findOne({email:email})
 
-        // if(userExist) {
-        //     throw new Error("User already exists")
-        // }
+        if(userExist) {
+            throw new Error("User already exists")
+        }
 
         const user = await User.create({
             name,
