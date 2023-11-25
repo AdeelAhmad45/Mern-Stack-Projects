@@ -25,11 +25,7 @@ function App() {
       user: username,
       time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes(),
     }
-    // if(!newMessage == "") {
-    //   socket.emit("send-message", messageData) // for sending messages
-    // } else {
-    //   alert("Message cannot be empty")
-    // } 
+   
 
     !newMessage == "" 
     ? socket.emit("send-message", messageData) // for sending messages
